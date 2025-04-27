@@ -2,6 +2,8 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import pandas as pd
 from datetime import datetime, timedelta, timezone
+import psycopg2
+import json
 
 # Path to the service account JSON key file
 SERVICE_ACCOUNT_FILE = r"<path_to_json_service_account_credentials>"
@@ -54,3 +56,32 @@ for item in result['responses']:
         data.append(item)  # Keep the response if it matches the target date
 
 print(f"Filtered responses for {target_date}:")
+
+now = datetime.utcnow()
+
+df = pd.read_csv(r'path_to_logins.csv')
+# print(df)
+username = df['Username'][1]
+password = df['Password'][1]
+
+
+conn = psycopg2.connect(
+    dbname = "gym",
+    user = username,
+    password = password,
+    host = "localhost",
+    port="5432"
+)
+cursor = conn.cursor()
+
+# Insert data
+insert_query = '''
+SET search_path TO RAW;
+INSERT INTO RAW_FORM_Questions (Questions,insert_timestamp)
+VALUES (%s,%s);
+'''
+cursor.execute(insert_query, (json.dumps(result_question), now))
+conn.commit()
+
+cursor.close()
+conn.close()
