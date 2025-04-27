@@ -27,3 +27,30 @@ result = service.forms().responses().list(formId=form_id).execute()
 result_question = service.forms().get(formId=form_id).execute()
 print(result)
 print(result_question)
+
+#### This is for when the pipeline is built to update daily
+
+data = []
+
+for item1 in result['responses']:
+    a = item1['createTime']
+    data.append(a)
+
+print(data)
+
+a = result['responses'][0]['createTime']
+print(a)
+
+data = []  # List to store filtered responses
+target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
+
+# Iterate over the responses
+for item in result['responses']:
+    # Parse the createTime field
+    create_time = datetime.fromisoformat(item['createTime'].replace("Z", "+00:00")).date()
+    
+    # Check if the response matches the target date
+    if create_time == target_date:
+        data.append(item)  # Keep the response if it matches the target date
+
+print(f"Filtered responses for {target_date}:")
