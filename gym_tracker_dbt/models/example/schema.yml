@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw  # schema where raw tables live
+    tables:
+      - name: raw_form_answers
+      - name: raw_form_questions
+
+models:
+  - name: GYM_RESPONSE # ✅ this must match your alias above
+    description: "Pivoted answers with question titles as columns"
+
+
+
+

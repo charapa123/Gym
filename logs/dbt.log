@@ -1,0 +1,107 @@
+[0m11:05:48.002780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D1496BC20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D1496A960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D11D38CB0>]}
+
+
+============================== 11:05:48.068172 | 6d2dfcd4-565a-4a3c-b69b-f280aa84c618 ==============================
+[0m11:05:48.068172 [info ] [MainThread]: Running with dbt=1.9.4
+[0m11:05:48.068172 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt init gym_tracker_dbt', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:05:48.119285 [debug] [MainThread]: Starter project path: C:\Documents\Python C drive\Gym\Gym Github\Gym\.venv\Lib\site-packages\dbt\include\starter_project
+[0m11:05:48.167256 [info ] [MainThread]: 
+Your new dbt project "gym_tracker_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:05:48.169251 [info ] [MainThread]: Setting up your profile.
+[0m11:08:03.583340 [info ] [MainThread]: Profile gym_tracker_dbt written to C:\Users\charl\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:08:03.583340 [debug] [MainThread]: Command `dbt init` succeeded at 11:08:03.583340 after 135.85 seconds
+[0m11:08:03.583340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D123552B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D12356120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D145E8530>]}
+[0m11:08:03.583340 [debug] [MainThread]: Flushing usage events
+[0m11:08:07.348895 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:08:18.583257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001847B5F8380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001847B5F8470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001847B5F83B0>]}
+
+
+============================== 11:08:18.583257 | beef1b84-9f11-4348-8d05-9b4026e7803d ==============================
+[0m11:08:18.583257 [info ] [MainThread]: Running with dbt=1.9.4
+[0m11:08:18.598851 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:08:18.628892 [info ] [MainThread]: dbt version: 1.9.4
+[0m11:08:18.628892 [info ] [MainThread]: python version: 3.12.5
+[0m11:08:18.628892 [info ] [MainThread]: python path: C:\Documents\Python C drive\Gym\Gym Github\Gym\.venv\Scripts\python.exe
+[0m11:08:18.628892 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m11:08:18.742512 [info ] [MainThread]: Using profiles dir at C:\Users\charl\.dbt
+[0m11:08:18.744175 [info ] [MainThread]: Using profiles.yml file at C:\Users\charl\.dbt\profiles.yml
+[0m11:08:18.745173 [info ] [MainThread]: Using dbt_project.yml file at C:\Documents\Python C drive\Gym\Gym Github\Gym\dbt_project.yml
+[0m11:08:18.746170 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m11:08:18.748165 [debug] [MainThread]: Command `dbt debug` failed at 11:08:18.748165 after 0.36 seconds
+[0m11:08:18.748165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001847B5FA3C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000184789ECB30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001847B74EBD0>]}
+[0m11:08:18.749162 [debug] [MainThread]: Flushing usage events
+[0m11:08:20.294378 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:22:47.917006 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F709F83E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F70D7C19D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F70DA3BC80>]}
+
+
+============================== 11:22:47.954086 | 84d89546-faa3-4e57-9d7b-20e1fbafc9fe ==============================
+[0m11:22:47.954086 [info ] [MainThread]: Running with dbt=1.9.4
+[0m11:22:47.954705 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:22:48.207274 [info ] [MainThread]: dbt version: 1.9.4
+[0m11:22:48.207274 [info ] [MainThread]: python version: 3.12.5
+[0m11:22:48.207274 [info ] [MainThread]: python path: C:\Documents\Python C drive\Gym\Gym Github\Gym\.venv\Scripts\python.exe
+[0m11:22:48.207274 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m11:22:48.563084 [info ] [MainThread]: Using profiles dir at C:\Users\charl\.dbt
+[0m11:22:48.563084 [info ] [MainThread]: Using profiles.yml file at C:\Users\charl\.dbt\profiles.yml
+[0m11:22:48.563084 [info ] [MainThread]: Using dbt_project.yml file at C:\Documents\Python C drive\Gym\Gym Github\Gym\dbt_project.yml
+[0m11:22:48.578677 [info ] [MainThread]: adapter type: postgres
+[0m11:22:48.578677 [info ] [MainThread]: adapter version: 1.9.0
+[0m11:22:48.578677 [info ] [MainThread]: Configuration:
+[0m11:22:48.582714 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:22:48.583711 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m11:22:48.584736 [info ] [MainThread]: Required dependencies:
+[0m11:22:48.585706 [debug] [MainThread]: Executing "git --help"
+[0m11:22:48.600988 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m11:22:48.600988 [info ] [MainThread]: Connection:
+[0m11:22:48.600988 [info ] [MainThread]:   host: localhost
+[0m11:22:48.600988 [info ] [MainThread]:   port: 5432
+[0m11:22:48.600988 [info ] [MainThread]:   user: Gon
+[0m11:22:48.607434 [info ] [MainThread]:   database: hunterxhunter
+[0m11:22:48.608432 [info ] [MainThread]:   schema: raw
+[0m11:22:48.609718 [info ] [MainThread]:   connect_timeout: 10
+[0m11:22:48.610723 [info ] [MainThread]:   role: None
+[0m11:22:48.611712 [info ] [MainThread]:   search_path: None
+[0m11:22:48.612788 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:22:48.612788 [info ] [MainThread]:   sslmode: None
+[0m11:22:48.612788 [info ] [MainThread]:   sslcert: None
+[0m11:22:48.612788 [info ] [MainThread]:   sslkey: None
+[0m11:22:48.617366 [info ] [MainThread]:   sslrootcert: None
+[0m11:22:48.666408 [info ] [MainThread]:   application_name: dbt
+[0m11:22:48.668816 [info ] [MainThread]:   retries: 1
+[0m11:22:48.669708 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:22:49.330822 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:22:52.281525 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:22:52.281525 [debug] [MainThread]: On debug: select 1 as id
+[0m11:22:52.281525 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:22:52.396890 [debug] [MainThread]: SQL status: SELECT 1 in 0.104 seconds
+[0m11:22:52.398643 [debug] [MainThread]: On debug: Close
+[0m11:22:52.398643 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:22:52.399687 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m11:22:52.400701 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Documents\Python C drive\Gym\Gym Github\Gym\dbt_project.yml> not found
+
+[0m11:22:52.401684 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH and that the user has permissions to run it: "git"
+
+[0m11:22:52.404338 [debug] [MainThread]: Command `dbt debug` failed at 11:22:52.403922 after 4.69 seconds
+[0m11:22:52.404338 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:22:52.405352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F70B425760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F70DD8C860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F70E10F080>]}
+[0m11:22:52.406220 [debug] [MainThread]: Flushing usage events
+[0m11:22:53.424623 [debug] [MainThread]: An error was encountered while trying to flush usage events
