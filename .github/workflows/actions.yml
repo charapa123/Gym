@@ -1,13 +1,21 @@
-name: Daily Gym Data Pipeline
-
-on:
-  schedule:
-    - cron: '0 2 * * *'  # Runs daily at 2:00 AM UTC
-  workflow_dispatch:     # Optional: allows manual trigger from GitHub UI
-
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_DB: ${{ secrets.DB_NAME }}
+          POSTGRES_USER: ${{ secrets.USERNAME }}
+          POSTGRES_PASSWORD: ${{ secrets.PASSWORD }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
       - name: Checkout repo
@@ -16,7 +24,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'  # Match your script's environment
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -27,16 +35,6 @@ jobs:
         run: |
           echo "${{ secrets.SERVICE_ACCOUNT_FILE }}" | base64 --decode > service_account.json
 
-      - name: Start Postgres service
-        uses: harmon758/postgresql-action@v1.0.1
-
-        with:
-          postgresql version: '13'
-          postgresql db: ${{ secrets.DB_NAME }}
-          postgresql username: ${{ secrets.USERNAME }}
-          postgresql password: ${{ secrets.PASSWORD }}
-          postgresql port: 5432
-
       - name: Run Gym Git.py
         env:
           FORM_ID: ${{ secrets.FORM_ID }}
@@ -44,8 +42,10 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           SCHEMA: ${{ secrets.SCHEMA }}
           DB_NAME: ${{ secrets.DB_NAME }}
-
+          HOST: localhost
+          PORT: 5432
         run: |
           python "Gym Git.py" "Workout Form Responses"
+
 
 
