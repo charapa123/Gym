@@ -23,9 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Write service account file
+      - name: Write service account file from base64
         run: |
-          printf "%s" "${{ secrets.SERVICE_ACCOUNT_FILE_JSON }}" > service_account.json
+          echo "${{ secrets.SERVICE_ACCOUNT_FILE }}" | base64 --decode > service_account.json
+
 
 
       - name: Run Gym Git.py
