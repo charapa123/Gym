@@ -28,7 +28,8 @@ jobs:
           echo "${{ secrets.SERVICE_ACCOUNT_FILE }}" | base64 --decode > service_account.json
 
       - name: Start Postgres service
-        uses: harmon758/postgresql-action@v1.1.0
+        uses: harmon758/postgresql-action@v1.0.1
+
         with:
           postgresql version: '13'
           postgresql db: ${{ secrets.DB_NAME }}
