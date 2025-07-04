@@ -14,7 +14,7 @@ FORM_ID = os.getenv("FORM_ID")
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 HOST = os.getenv("HOST")
-PORT = os.getenv("PORT")
+PORT = os.getenv('PORT', '5432')
 SERVICE_ACCOUNT_FILE = "service_account.json"
 SCHEMA = os.getenv("SCHEMA")
 DB_NAME = os.getenv("DB_NAME")
@@ -54,10 +54,8 @@ for item1 in result['responses']:
     a = item1['createTime']
     data.append(a)
 
-print(data)
 
 a = result['responses'][0]['createTime']
-print(a)
 
 data = []  # List to store filtered responses
 # target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
