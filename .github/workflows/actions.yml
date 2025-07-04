@@ -34,8 +34,6 @@ jobs:
           FORM_ID: ${{ secrets.FORM_ID }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          HOST: ${{ secrets.HOST }}
-          PORT: ${{ secrets.PORT }}
           SCHEMA: ${{ secrets.SCHEMA }}
           DB_NAME: ${{ secrets.DB_NAME }}
         run: |

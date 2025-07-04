@@ -13,7 +13,6 @@ sheet_name = sys.argv[1]  # e.g., "Workout Form Responses"
 FORM_ID = os.getenv("FORM_ID")
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
-HOST = os.getenv("HOST")
 SERVICE_ACCOUNT_FILE = "service_account.json"
 SCHEMA = os.getenv("SCHEMA")
 DB_NAME = os.getenv("DB_NAME")
@@ -69,7 +68,7 @@ for item in result['responses']:
     if create_time == target_date:
         data.append(item)  # Keep the response if it matches the target date
 
-print(f"Filtered responses for {target_date}:")
+# print(f"Filtered responses for {target_date}:")
 
 now = datetime.utcnow()
 
@@ -77,7 +76,7 @@ conn = psycopg2.connect(
     dbname = DB_NAME,
     user = USERNAME,
     password = PASSWORD,
-    host = HOST,
+    host = "localhost",
     port="5432"
 )
 cursor = conn.cursor()
