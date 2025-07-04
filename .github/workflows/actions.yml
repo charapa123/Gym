@@ -3,26 +3,11 @@ name: Daily Gym Data Pipeline
 on:
   schedule:
     - cron: '0 2 * * *'  # Runs daily at 2:00 AM UTC
-  workflow_dispatch:     # Optional: allows manual trigger from GitHub UI
+  workflow_dispatch:     # Allows manual trigger
 
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:13
-        env:
-          POSTGRES_DB: ${{ secrets.DB_NAME }}
-          POSTGRES_USER: ${{ secrets.USERNAME }}
-          POSTGRES_PASSWORD: ${{ secrets.PASSWORD }}
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
 
     steps:
       - name: Checkout repo
@@ -45,14 +30,15 @@ jobs:
       - name: Run Gym Git.py
         env:
           FORM_ID: ${{ secrets.FORM_ID }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
+          USERNAME: ${{ secrets.DB_USERNAME }}
+          PASSWORD: ${{ secrets.DB_PASSWORD }}
           SCHEMA: ${{ secrets.SCHEMA }}
           DB_NAME: ${{ secrets.DB_NAME }}
-          HOST: localhost
-          PORT: 5432
+          HOST: ${{ secrets.DB_HOST }}
+          PORT: ${{ secrets.DB_PORT }}
         run: |
           python "Gym Git.py" "Workout Form Responses"
+
 
 
 
