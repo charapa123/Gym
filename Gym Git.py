@@ -4,9 +4,25 @@ import pandas as pd
 from datetime import datetime, timedelta, timezone
 import psycopg2
 import json
+import os
+import sys
 
-# Path to the service account JSON key file
-SERVICE_ACCOUNT_FILE = r"<path_to_json_service_account_credentials>"
+sheet_name = sys.argv[1]  # e.g., "Workout Form Responses"
+
+# Load secrets securely
+FORM_ID = os.getenv("FORM_ID")
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+HOST = os.getenv("HOST")
+PORT = os.getenv("PORT")
+SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
+SCHEMA = os.getenv("SCHEMA")
+DB_NAME = os.getenv("DB_NAME")
+
+# Now you can connect securely using these values
+
+
+
 
 # Scopes for accessing Google Forms responses
 SCOPES = ["https://www.googleapis.com/auth/forms.responses.readonly","https://www.googleapis.com/auth/forms.body.readonly"]
@@ -22,7 +38,7 @@ service = build(
 )
 
 # # Form ID to retrieve responses
-form_id = "<id>"
+form_id = FORM_ID
 
 # Get the form responses
 result = service.forms().responses().list(formId=form_id).execute()
@@ -59,25 +75,19 @@ print(f"Filtered responses for {target_date}:")
 
 now = datetime.utcnow()
 
-df = pd.read_csv(r'path_to_logins.csv')
-# print(df)
-username = df['Username'][1]
-password = df['Password'][1]
-
-
 conn = psycopg2.connect(
-    dbname = "gym",
-    user = username,
-    password = password,
-    host = "localhost",
-    port="5432"
+    dbname = DB_NAME,
+    user = USERNAME,
+    password = PASSWORD,
+    host = HOST,
+    port=PORT
 )
 cursor = conn.cursor()
 
 # Insert data
 insert_query = '''
 SET search_path TO RAW;
-INSERT INTO RAW_FORM_Questions (Questions,insert_timestamp)
+INSERT INTO raw_form_answers (,insert_timestamp)
 VALUES (%s,%s);
 '''
 cursor.execute(insert_query, (json.dumps(result_question), now))
