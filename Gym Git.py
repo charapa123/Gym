@@ -14,7 +14,6 @@ FORM_ID = os.getenv("FORM_ID")
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 HOST = os.getenv("HOST")
-PORT = os.getenv('PORT', '5432')
 SERVICE_ACCOUNT_FILE = "service_account.json"
 SCHEMA = os.getenv("SCHEMA")
 DB_NAME = os.getenv("DB_NAME")
@@ -79,7 +78,7 @@ conn = psycopg2.connect(
     user = USERNAME,
     password = PASSWORD,
     host = HOST,
-    port=PORT
+    port="5432"
 )
 cursor = conn.cursor()
 
