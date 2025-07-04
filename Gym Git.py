@@ -15,7 +15,7 @@ USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 HOST = os.getenv("HOST")
 PORT = os.getenv("PORT")
-SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
+SERVICE_ACCOUNT_FILE = "service_account.json"
 SCHEMA = os.getenv("SCHEMA")
 DB_NAME = os.getenv("DB_NAME")
 
