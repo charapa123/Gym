@@ -41,8 +41,8 @@ form_id = FORM_ID
 # Get the form responses
 result = service.forms().responses().list(formId=form_id).execute()
 result_question = service.forms().get(formId=form_id).execute()
-print(result)
-print(result_question)
+# print(result)
+# print(result_question)
 
 #### This is for when the pipeline is built to update daily
 
