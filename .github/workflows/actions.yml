@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Write service account JSON to file
-        run: echo "${{ secrets.SERVICE_ACCOUNT_FILE_JSON }}" > service_account.json
+        run: echo '${{ secrets.SERVICE_ACCOUNT_FILE_JSON }}' > service_account.json
 
       - name: Run Gym Git.py
         env:
