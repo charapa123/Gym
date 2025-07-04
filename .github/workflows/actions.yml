@@ -2,12 +2,12 @@ name: Daily Gym Data Pipeline
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Runs daily at 2:00 AM UTC
-  workflow_dispatch:     # Allows manual trigger
+    - cron: '0 2 * * *'  # Daily at 2:00 AM UTC
+  workflow_dispatch:     # Allow manual trigger
 
 jobs:
   run-pipeline:
-    runs-on: self-hosted
+    runs-on: self-hosted  # This is your local Windows machine
 
     steps:
       - name: Checkout repo
@@ -23,22 +23,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Write service account file from base64
+      - name: Decode service account JSON (PowerShell on Windows)
+        shell: pwsh
         run: |
-          echo "${{ secrets.SERVICE_ACCOUNT_FILE }}" | base64 --decode > service_account.json
+          $decoded = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("${{ secrets.SERVICE_ACCOUNT_FILE }}"))
+          Set-Content -Path "service_account.json" -Value $decoded
 
       - name: Run Gym Git.py
+        shell: pwsh
         env:
           FORM_ID: ${{ secrets.FORM_ID }}
-          USERNAME: ${{ secrets.DB_USERNAME }}
-          PASSWORD: ${{ secrets.DB_PASSWORD }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
           SCHEMA: ${{ secrets.SCHEMA }}
           DB_NAME: ${{ secrets.DB_NAME }}
-          HOST: ${{ secrets.DB_HOST }}
-          PORT: ${{ secrets.DB_PORT }}
         run: |
           python "Gym Git.py" "Workout Form Responses"
-
-
 
 
