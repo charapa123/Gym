@@ -60,7 +60,8 @@ a = result['responses'][0]['createTime']
 print(a)
 
 data = []  # List to store filtered responses
-target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
+# target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
+target_date = datetime.now(timezone.utc).date() - timedelta(days=1)
 
 # Iterate over the responses
 for item in result['responses']:
@@ -87,10 +88,11 @@ cursor = conn.cursor()
 # Insert data
 insert_query = '''
 SET search_path TO RAW;
-INSERT INTO raw_form_answers (,insert_timestamp)
+INSERT INTO RAW_FORM_ANSWERS (ANSWERS,INSERT_TIMESTAMP)
 VALUES (%s,%s);
 '''
-cursor.execute(insert_query, (json.dumps(result_question), now))
+for item in data:
+    cursor.execute(insert_query, (json.dumps(item), now))
 conn.commit()
 
 cursor.close()
