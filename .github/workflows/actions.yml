@@ -27,7 +27,14 @@ jobs:
         run: |
           echo "${{ secrets.SERVICE_ACCOUNT_FILE }}" | base64 --decode > service_account.json
 
-
+      - name: Start Postgres service
+        uses: harmon758/postgresql-action@v1.1.0
+        with:
+          postgresql version: '13'
+          postgresql db: ${{ secrets.DB_NAME }}
+          postgresql username: ${{ secrets.USERNAME }}
+          postgresql password: ${{ secrets.PASSWORD }}
+          postgresql port: 5432
 
       - name: Run Gym Git.py
         env:
@@ -36,6 +43,8 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           SCHEMA: ${{ secrets.SCHEMA }}
           DB_NAME: ${{ secrets.DB_NAME }}
+
         run: |
           python "Gym Git.py" "Workout Form Responses"
+
 
