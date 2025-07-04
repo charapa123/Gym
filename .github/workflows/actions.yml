@@ -2,12 +2,12 @@ name: Daily Gym Data Pipeline
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Daily at 2:00 AM UTC
-  workflow_dispatch:     # Allow manual trigger
+    - cron: '0 2 * * *'  # Runs daily at 2:00 AM UTC
+  workflow_dispatch:     # Optional: allows manual trigger from GitHub UI
 
 jobs:
   run-pipeline:
-    runs-on: self-hosted  # This is your local Windows machine
+    runs-on: self-hosted  # Your Windows machine running the GitHub runner
 
     steps:
       - name: Checkout repo
@@ -23,14 +23,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Decode service account JSON (PowerShell on Windows)
-        shell: pwsh
+      - name: Decode service account JSON (Windows PowerShell)
+        shell: powershell
         run: |
           $decoded = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("${{ secrets.SERVICE_ACCOUNT_FILE }}"))
           Set-Content -Path "service_account.json" -Value $decoded
 
       - name: Run Gym Git.py
-        shell: pwsh
+        shell: powershell
         env:
           FORM_ID: ${{ secrets.FORM_ID }}
           USERNAME: ${{ secrets.USERNAME }}
