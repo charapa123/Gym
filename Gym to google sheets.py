@@ -5,15 +5,17 @@ from datetime import datetime, timedelta, timezone
 import json
 import os
 import sys
+from googleapiclient.errors import HttpError
 
 sheet_name = sys.argv[1]  # e.g., "Workout Form Responses"
 
 # Load secrets securely
 FORM_ID = os.getenv("FORM_ID")
 SERVICE_ACCOUNT_FILE = "service_account.json"
+google_sheets_id = os.getenv("GOOGLE_SHEETS_ID")
 
 # Scopes for accessing Google Forms responses
-SCOPES = ["https://www.googleapis.com/auth/forms.responses.readonly","https://www.googleapis.com/auth/forms.body.readonly"]
+SCOPES = ["https://www.googleapis.com/auth/forms.responses.readonly","https://www.googleapis.com/auth/forms.body.readonly","https://www.googleapis.com/auth/spreadsheets"]
 
 # Load the service account credentials
 credentials = service_account.Credentials.from_service_account_file(
@@ -143,5 +145,39 @@ final_df = final_df.sort_values(by='create_time')
 
 
 print(final_df)
+
+service_sheets = build(
+    "sheets", "v4", credentials=credentials)
+
+
+# Now final_df is a pivoted DataFrame, similar to your final SQL SELECT result
+
+def upload_dataframe_to_sheets(df, spreadsheet_id, range_name, service_sheets):
+    # Prepare the data as list of lists
+    values = [df.columns.tolist()] + df.astype(str).values.tolist()
+
+    body = {
+        'values': values
+    }
+
+    try:
+        result = service_sheets.spreadsheets().values().update(
+            spreadsheetId=spreadsheet_id,
+            range=range_name,  # e.g., 'Sheet1!A1'
+            valueInputOption='RAW',
+            body=body
+        ).execute()
+
+        print(f"{result.get('updatedCells')} cells updated.")
+    except HttpError as error:
+        print(f"An error occurred: {error}")
+        return None
+    
+upload_dataframe_to_sheets(
+    df=final_df,
+    spreadsheet_id=google_sheets_id,
+    range_name="Sheet1!A1",  # Start cell, adjust as needed
+    service_sheets=service_sheets
+)
 
 # Now final_df is a pivoted DataFrame, similar to your final SQL SELECT result
