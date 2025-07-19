@@ -62,7 +62,7 @@ now = datetime.utcnow()
 def extract_flattened_answers(data):
     rows = []
     for response in data:
-        insert_timestamp = datetime.datetime.utcnow().isoformat()
+        insert_timestamp = datetime.now(timezone.utc).isoformat()
         response_id = response.get('responseId')
         create_time = response.get('createTime')
         respondent_email = response.get('respondentEmail')
@@ -135,9 +135,11 @@ def pivot_with_pandas(flat_df, question_map):
 # form_answers = [...]  # raw_form_answers data
 # form_questions = {...}  # raw_form_questions data
 
-df_answers = extract_flattened_answers(result)
+df_answers = extract_flattened_answers(result["responses"])
 question_map = extract_question_map(result_question)
 final_df = pivot_with_pandas(df_answers, question_map)
+final_df['create_time'] = pd.to_datetime(final_df['create_time'], utc=True, format='mixed')
+final_df = final_df.sort_values(by='create_time')
 
 
 print(final_df)
