@@ -1,9 +1,7 @@
 name: Daily Gym Data Pipeline Google Sheets
 
 on:
-  push:
-    branches:
-      - dev               # Trigger on push to dev branch
+            # Trigger on push to dev branch
   schedule:
     - cron: '0 2 * * *'   # Runs daily at 2:00 AM UTC
   workflow_dispatch:      # Allows manual trigger from GitHub UI
