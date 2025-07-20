@@ -12,7 +12,7 @@ sheet_name = sys.argv[1]  # e.g., "Workout Form Responses"
 # Load secrets securely
 FORM_ID = os.getenv("FORM_ID")
 SERVICE_ACCOUNT_FILE = "service_account.json"
-google_sheets_id = os.getenv("GOOGLE_SHEETS_ID")
+GOOGLE_SHEETS_ID = os.getenv("GOOGLE_SHEETS_ID")
 
 # Scopes for accessing Google Forms responses
 SCOPES = ["https://www.googleapis.com/auth/forms.responses.readonly","https://www.googleapis.com/auth/forms.body.readonly","https://www.googleapis.com/auth/spreadsheets"]
@@ -194,7 +194,7 @@ def append_dataframe_to_sheets(df, spreadsheet_id, sheet_name, service_sheets):
     
 append_dataframe_to_sheets(
     df=final_df,
-    spreadsheet_id=google_sheets_id,
+    spreadsheet_id=GOOGLE_SHEETS_ID,
     sheet_name="Sheet1",
     service_sheets=service_sheets
 )
