@@ -1,5 +1,5 @@
 name: Daily Gym Data Pipeline Google Sheets
-#
+
 on:
   push:
     branches:
