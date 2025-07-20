@@ -1,9 +1,7 @@
 name: Daily Gym Data Pipeline
 
-# on:
-#   schedule:
-#     - cron: '0 2 * * *'  # Runs daily at 2:00 AM UTC
-#   workflow_dispatch:     # Optional: allows manual trigger from GitHub UI
+on:
+  workflow_dispatch:  # Manual trigger only
 
 jobs:
   run-pipeline:
