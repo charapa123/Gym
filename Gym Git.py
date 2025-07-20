@@ -39,28 +39,46 @@ service = build(
 form_id = FORM_ID
 
 # Get the form responses
-result = service.forms().responses().list(formId=form_id).execute()
+# result = service.forms().responses().list(formId=form_id).execute()
 result_question = service.forms().get(formId=form_id).execute()
 # print(result)
 # print(result_question)
+
+result = []
+page_token = None
+
+while True:
+    request = service.forms().responses().list(
+        formId=form_id,
+        pageSize=100,  # Max is 1000
+        pageToken=page_token
+    )
+    response = request.execute()
+
+    result.extend(response.get("responses", []))
+
+    page_token = response.get("nextPageToken")
+    if not page_token:
+        break
+
+
 
 #### This is for when the pipeline is built to update daily
 
 data = []
 
-for item1 in result['responses']:
+for item1 in result:
     a = item1['createTime']
     data.append(a)
 
 
-a = result['responses'][0]['createTime']
 
 data = []  # List to store filtered responses
 # target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
 target_date = datetime.now(timezone.utc).date() - timedelta(days=1)
 
 # Iterate over the responses
-for item in result['responses']:
+for item in result:
     # Parse the createTime field
     create_time = datetime.fromisoformat(item['createTime'].replace("Z", "+00:00")).date()
     

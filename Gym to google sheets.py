@@ -31,24 +31,41 @@ service = build(
 form_id = FORM_ID
 
 # Get the form responses
-result = service.forms().responses().list(formId=form_id).execute()
+# result = service.forms().responses().list(formId=form_id).execute()
 result_question = service.forms().get(formId=form_id).execute()
+
+result = []
+page_token = None
+
+while True:
+    request = service.forms().responses().list(
+        formId=form_id,
+        pageSize=100,  # Max is 1000
+        pageToken=page_token
+    )
+    response = request.execute()
+
+    result.extend(response.get("responses", []))
+
+    page_token = response.get("nextPageToken")
+    if not page_token:
+        break
 
 data = []
 
-for item1 in result['responses']:
+for item1 in result:
     a = item1['createTime']
     data.append(a)
 
 
-a = result['responses'][0]['createTime']
+# a = result['responses'][0]['createTime']
 
 data = []  # List to store filtered responses
 target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
 # target_date = datetime.now(timezone.utc).date() - timedelta(days=1)
 
 # Iterate over the responses
-for item in result['responses']:
+for item in result:
     # Parse the createTime field
     create_time = datetime.fromisoformat(item['createTime'].replace("Z", "+00:00")).date()
     
@@ -137,7 +154,7 @@ def pivot_with_pandas(flat_df, question_map):
 # form_answers = [...]  # raw_form_answers data
 # form_questions = {...}  # raw_form_questions data
 
-df_answers = extract_flattened_answers(result["responses"])
+df_answers = extract_flattened_answers(data)
 question_map = extract_question_map(result_question)
 final_df = pivot_with_pandas(df_answers, question_map)
 final_df['create_time'] = pd.to_datetime(final_df['create_time'], utc=True, format='mixed')
@@ -152,31 +169,33 @@ service_sheets = build(
 
 # Now final_df is a pivoted DataFrame, similar to your final SQL SELECT result
 
-def upload_dataframe_to_sheets(df, spreadsheet_id, range_name, service_sheets):
-    # Prepare the data as list of lists
-    values = [df.columns.tolist()] + df.astype(str).values.tolist()
+def append_dataframe_to_sheets(df, spreadsheet_id, sheet_name, service_sheets):
+    # Prepare data (convert DataFrame to list of lists)
+    values = df.astype(str).values.tolist()
 
     body = {
         'values': values
     }
 
     try:
-        result = service_sheets.spreadsheets().values().update(
+        result = service_sheets.spreadsheets().values().append(
             spreadsheetId=spreadsheet_id,
-            range=range_name,  # e.g., 'Sheet1!A1'
+            range=f"{sheet_name}!A1",  # Start range; Google Sheets will append automatically
             valueInputOption='RAW',
+            insertDataOption='INSERT_ROWS',
             body=body
         ).execute()
 
-        print(f"{result.get('updatedCells')} cells updated.")
-    except HttpError as error:
-        print(f"An error occurred: {error}")
-        return None
+        updates = result.get('updates', {})
+        print(f"{updates.get('updatedRows', 0)} rows appended to {sheet_name}")
+    except Exception as error:
+        print(f"Append failed: {error}")
+
     
-upload_dataframe_to_sheets(
+append_dataframe_to_sheets(
     df=final_df,
     spreadsheet_id=google_sheets_id,
-    range_name="Sheet1!A1",  # Start cell, adjust as needed
+    sheet_name="Sheet1",
     service_sheets=service_sheets
 )
 
