@@ -61,8 +61,8 @@ for item1 in result:
 # a = result['responses'][0]['createTime']
 
 data = []  # List to store filtered responses
-target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
-# target_date = datetime.now(timezone.utc).date() - timedelta(days=1)
+# target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
+target_date = datetime.now(timezone.utc).date() - timedelta(days=1)
 
 # Iterate over the responses
 for item in result:
