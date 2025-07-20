@@ -27,13 +27,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Decode service account JSON (Windows PowerShell)
-        shell: powershell
+        shell: bash
         run: |
           $decoded = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("${{ secrets.SERVICE_ACCOUNT_FILE }}"))
           Set-Content -Path "service_account.json" -Value $decoded
 
       - name: Run Gym to google sheets.py
-        shell: powershell
+        shell: bash
         env:
           FORM_ID: ${{ secrets.FORM_ID }}
           google_sheets_id: ${{ secrets.GOOGLE_SHEETS_ID}}
