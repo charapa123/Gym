@@ -1,0 +1,38 @@
+name: Daily Gym Data Pipeline Google Sheets
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Runs daily at 2:00 AM UTC
+  workflow_dispatch:     # Optional: allows manual trigger from GitHub UI
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest  # Your Windows machine running the GitHub runner
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Decode service account JSON (Windows PowerShell)
+        shell: powershell
+        run: |
+          $decoded = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("${{ secrets.SERVICE_ACCOUNT_FILE }}"))
+          Set-Content -Path "service_account.json" -Value $decoded
+
+      - name: Run Gym to google sheets.py
+        shell: powershell
+        env:
+          FORM_ID: ${{ secrets.FORM_ID }}
+          google_sheets_id: ${{ secrets.GOOGLE_SHEETS_ID}}
+        run: |
+          python "Gym to google sheets.py" "Workout Form Responses"
