@@ -36,6 +36,6 @@ jobs:
         shell: bash
         env:
           FORM_ID: ${{ secrets.FORM_ID }}
-          google_sheets_id: ${{ secrets.GOOGLE_SHEETS_ID}}
+          GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID}}
         run: |
           python "Gym to google sheets.py" "Workout Form Responses"
