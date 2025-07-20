@@ -2,3 +2,7 @@ google-api-python-client
 google-auth
 pandas
 psycopg2-binary
+google-auth-httplib2
+google-auth-oauthlib
+
+
