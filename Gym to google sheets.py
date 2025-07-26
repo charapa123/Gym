@@ -51,14 +51,7 @@ while True:
     if not page_token:
         break
 
-data = []
 
-for item1 in result:
-    a = item1['createTime']
-    data.append(a)
-
-
-# a = result['responses'][0]['createTime']
 
 data = []  # List to store filtered responses
 # target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
@@ -77,6 +70,13 @@ for item in result:
 
 now = datetime.utcnow()
 
+
+# Check if data is empty
+if not data:
+    print("No available data. Exiting.")
+    sys.exit()  # Stops the script
+else:
+    print("Data found:")
 
 def extract_flattened_answers(data):
     rows = []
