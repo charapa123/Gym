@@ -33,6 +33,9 @@ models:
   gym_tracker_dbt:
     example:
       +materialized: view
+    Staging:
+      +materialized: view
+    
 
 
 
