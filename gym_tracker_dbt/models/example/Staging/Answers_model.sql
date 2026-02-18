@@ -1,6 +1,5 @@
 
 
-
 SELECT
 insert_timestamp,
   answers->>'responseId' AS response_id,

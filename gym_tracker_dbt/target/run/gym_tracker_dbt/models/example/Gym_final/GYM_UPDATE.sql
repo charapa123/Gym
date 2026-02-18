@@ -2,7 +2,7 @@
   
     
 
-  create  table "gym"."pres"."GYM_test__dbt_tmp"
+  create  table "gym"."pres_pres"."GYM_test__dbt_tmp"
   
   
     as

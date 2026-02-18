@@ -1,4 +1,5 @@
 {{ config(
+    schema = 'pres',
     materialized = 'table',
     alias = 'GYM_test'
 ) }}
