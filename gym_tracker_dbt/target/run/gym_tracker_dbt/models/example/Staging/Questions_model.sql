@@ -1,5 +1,5 @@
 
-  create view "gym"."pres"."Questions_model__dbt_tmp"
+  create view "gym"."staging"."Questions_model__dbt_tmp"
     
     
   as (

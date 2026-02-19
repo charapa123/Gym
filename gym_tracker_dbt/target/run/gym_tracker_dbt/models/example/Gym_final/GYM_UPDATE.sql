@@ -1,35 +1,18 @@
 
-  
+      
+        
+        
+        delete from "gym"."pres"."GYM_UPDATE" as DBT_INTERNAL_DEST
+        where (response_Id) in (
+            select distinct response_Id
+            from "GYM_UPDATE__dbt_tmp210437969665" as DBT_INTERNAL_SOURCE
+        );
+
     
 
-  create  table "gym"."pres_pres"."GYM_test__dbt_tmp"
-  
-  
-    as
-  
-  (
-    
-
-
-
-SELECT
-    A.insert_timestamp,
-    A.response_id,
-    A.create_time,
-    A.respondent_email,
-    MAX(A.answer) FILTER (WHERE Q.title = 'Which body part did you work out?') AS "Body_Part",
-    MAX(A.answer) FILTER (WHERE Q.title = 'How heavy was the weight?') AS "Weight",
-    MAX(A.answer) FILTER (WHERE Q.title = 'How many reps?') AS "Reps",
-	MAX(A.answer) FILTER (WHERE Q.title = 'Exercises') AS "Exercises"
-	
-FROM
-    "gym"."pres"."Answers_model" A
-INNER JOIN
-    "gym"."pres"."Questions_model" Q ON A.question_id = Q.questionid
-GROUP BY
-    A.insert_timestamp,
-    A.response_id,
-    A.create_time,
-    A.respondent_email
-  );
+    insert into "gym"."pres"."GYM_UPDATE" ("insert_timestamp", "response_id", "create_time", "respondent_email", "Body_Part", "Weight", "Reps", "Exercises")
+    (
+        select "insert_timestamp", "response_id", "create_time", "respondent_email", "Body_Part", "Weight", "Reps", "Exercises"
+        from "GYM_UPDATE__dbt_tmp210437969665"
+    )
   

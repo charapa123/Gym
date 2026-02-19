@@ -13,9 +13,9 @@ SELECT
 	MAX(A.answer) FILTER (WHERE Q.title = 'Exercises') AS "Exercises"
 	
 FROM
-    "gym"."pres"."Answers_model" A
+    "gym"."staging"."Answers_model" A
 INNER JOIN
-    "gym"."pres"."Questions_model" Q ON A.question_id = Q.questionid
+    "gym"."staging"."Questions_model" Q ON A.question_id = Q.questionid
 GROUP BY
     A.insert_timestamp,
     A.response_id,

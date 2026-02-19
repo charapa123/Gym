@@ -1,7 +1,6 @@
 {{ config(
-    schema = 'pres',
-    materialized = 'table',
-    alias = 'GYM_test'
+    materialized='incremental',
+    unique_key='response_Id'
 ) }}
 
 
