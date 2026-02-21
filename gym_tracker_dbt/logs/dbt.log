@@ -10173,3 +10173,843 @@ GROUP BY
 [0m21:04:38.387511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000245004291C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000245000C2270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002457E20D430>]}
 [0m21:04:38.387511 [debug] [MainThread]: Flushing usage events
 [0m21:04:38.797733 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:28:24.790025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC40FC02C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC43960530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC439620C0>]}
+
+
+============================== 19:28:24.847156 | 922af93a-0fb4-4813-8f01-c3ef593749e9 ==============================
+[0m19:28:24.847156 [info ] [MainThread]: Running with dbt=1.9.4
+[0m19:28:24.848154 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Documents\\Python C drive\\Gym\\Gym Github\\Gym\\gym_tracker_dbt\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run -s Staging', 'send_anonymous_usage_stats': 'True'}
+[0m19:28:25.713020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '922af93a-0fb4-4813-8f01-c3ef593749e9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC4418B860>]}
+[0m19:28:25.774018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '922af93a-0fb4-4813-8f01-c3ef593749e9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC43919EB0>]}
+[0m19:28:25.774018 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m19:28:26.665366 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m19:28:29.180832 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m19:28:29.180832 [debug] [MainThread]: Partial parsing: added file: gym_tracker_dbt://models\example\Staging\Answers_filter.sql
+[0m19:28:29.509350 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.gym_tracker_dbt.example.Gym_Final
+[0m19:28:29.524971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '922af93a-0fb4-4813-8f01-c3ef593749e9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC4562FBC0>]}
+[0m19:28:29.646163 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:28:29.727150 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:28:30.186242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '922af93a-0fb4-4813-8f01-c3ef593749e9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC456607D0>]}
+[0m19:28:30.186242 [info ] [MainThread]: Found 5 models, 2 sources, 434 macros
+[0m19:28:30.186242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '922af93a-0fb4-4813-8f01-c3ef593749e9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC456B1D60>]}
+[0m19:28:30.186242 [warn ] [MainThread]: The selection criterion 'Staging' does not match any enabled nodes
+[0m19:28:30.186242 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m19:28:30.186242 [debug] [MainThread]: Command end result
+[0m19:28:30.222325 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:28:30.222325 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:28:30.222325 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\run_results.json
+[0m19:28:30.222325 [debug] [MainThread]: Command `dbt run` succeeded at 19:28:30.222325 after 5.69 seconds
+[0m19:28:30.222325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC456B1850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC456B3590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC43EB8290>]}
+[0m19:28:30.222325 [debug] [MainThread]: Flushing usage events
+[0m19:28:31.456615 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:31:03.607126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B356CDB80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B354319D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B354317C0>]}
+
+
+============================== 19:31:03.607126 | 20f35f76-e770-44c3-8500-03a49be7a853 ==============================
+[0m19:31:03.607126 [info ] [MainThread]: Running with dbt=1.9.4
+[0m19:31:03.607126 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Documents\\Python C drive\\Gym\\Gym Github\\Gym\\gym_tracker_dbt\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select Questions_model', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m19:31:03.849149 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '20f35f76-e770-44c3-8500-03a49be7a853', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B359DBC50>]}
+[0m19:31:03.927255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '20f35f76-e770-44c3-8500-03a49be7a853', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B35A4D520>]}
+[0m19:31:03.927255 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m19:31:04.398532 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m19:31:04.630398 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m19:31:04.630398 [debug] [MainThread]: Partial parsing: added file: gym_tracker_dbt://models\example\Staging\Questions_filter.sql
+[0m19:31:04.631396 [debug] [MainThread]: Partial parsing: deleted file: gym_tracker_dbt://models\example\Staging\Answers_filter.sql
+[0m19:31:04.919583 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.gym_tracker_dbt.example.Gym_Final
+[0m19:31:04.935229 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '20f35f76-e770-44c3-8500-03a49be7a853', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B36FD55E0>]}
+[0m19:31:05.019469 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:31:05.025454 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:31:05.058058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '20f35f76-e770-44c3-8500-03a49be7a853', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B370B8680>]}
+[0m19:31:05.058058 [info ] [MainThread]: Found 5 models, 2 sources, 434 macros
+[0m19:31:05.058058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '20f35f76-e770-44c3-8500-03a49be7a853', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B36F82C90>]}
+[0m19:31:05.058058 [info ] [MainThread]: 
+[0m19:31:05.058058 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:31:05.058058 [info ] [MainThread]: 
+[0m19:31:05.058058 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:31:05.058058 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gym'
+[0m19:31:08.839442 [debug] [ThreadPool]: Using postgres connection "list_gym"
+[0m19:31:08.839442 [debug] [ThreadPool]: On list_gym: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:31:08.839442 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:31:08.948542 [debug] [ThreadPool]: SQL status: SELECT 9 in 0.098 seconds
+[0m19:31:08.948542 [debug] [ThreadPool]: On list_gym: Close
+[0m19:31:08.948542 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gym_pres'
+[0m19:31:08.964164 [debug] [ThreadPool]: Using postgres connection "list_gym_pres"
+[0m19:31:08.964164 [debug] [ThreadPool]: On list_gym_pres: BEGIN
+[0m19:31:08.964164 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:31:09.011029 [debug] [ThreadPool]: SQL status: BEGIN in 0.059 seconds
+[0m19:31:09.011029 [debug] [ThreadPool]: Using postgres connection "list_gym_pres"
+[0m19:31:09.011029 [debug] [ThreadPool]: On list_gym_pres: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym_pres"} */
+select
+      'gym' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'pres'
+    union all
+    select
+      'gym' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'pres'
+    union all
+    select
+      'gym' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'pres'
+  
+[0m19:31:09.058044 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.035 seconds
+[0m19:31:09.058044 [debug] [ThreadPool]: On list_gym_pres: ROLLBACK
+[0m19:31:09.058044 [debug] [ThreadPool]: On list_gym_pres: Close
+[0m19:31:09.058044 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_gym_pres, now list_gym_staging)
+[0m19:31:09.058044 [debug] [ThreadPool]: Using postgres connection "list_gym_staging"
+[0m19:31:09.058044 [debug] [ThreadPool]: On list_gym_staging: BEGIN
+[0m19:31:09.058044 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:31:09.119214 [debug] [ThreadPool]: SQL status: BEGIN in 0.051 seconds
+[0m19:31:09.119214 [debug] [ThreadPool]: Using postgres connection "list_gym_staging"
+[0m19:31:09.120209 [debug] [ThreadPool]: On list_gym_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym_staging"} */
+select
+      'gym' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'gym' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'gym' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m19:31:09.127190 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.007 seconds
+[0m19:31:09.129184 [debug] [ThreadPool]: On list_gym_staging: ROLLBACK
+[0m19:31:09.129184 [debug] [ThreadPool]: On list_gym_staging: Close
+[0m19:31:09.135168 [debug] [MainThread]: Using postgres connection "master"
+[0m19:31:09.135168 [debug] [MainThread]: On master: BEGIN
+[0m19:31:09.136166 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:31:09.175721 [debug] [MainThread]: SQL status: BEGIN in 0.050 seconds
+[0m19:31:09.175721 [debug] [MainThread]: Using postgres connection "master"
+[0m19:31:09.175721 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:31:09.206964 [debug] [MainThread]: SQL status: SELECT 6 in 0.034 seconds
+[0m19:31:09.222586 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '20f35f76-e770-44c3-8500-03a49be7a853', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B36F82C90>]}
+[0m19:31:09.222586 [debug] [MainThread]: On master: ROLLBACK
+[0m19:31:09.222586 [debug] [MainThread]: Using postgres connection "master"
+[0m19:31:09.222586 [debug] [MainThread]: On master: BEGIN
+[0m19:31:09.222586 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m19:31:09.222586 [debug] [MainThread]: On master: COMMIT
+[0m19:31:09.222586 [debug] [MainThread]: Using postgres connection "master"
+[0m19:31:09.222586 [debug] [MainThread]: On master: COMMIT
+[0m19:31:09.222586 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:31:09.222586 [debug] [MainThread]: On master: Close
+[0m19:31:09.261401 [debug] [Thread-1 (]: Began running node model.gym_tracker_dbt.Questions_model
+[0m19:31:09.261401 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.Questions_model ............................ [RUN]
+[0m19:31:09.261401 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.gym_tracker_dbt.Questions_model'
+[0m19:31:09.261401 [debug] [Thread-1 (]: Began compiling node model.gym_tracker_dbt.Questions_model
+[0m19:31:09.277031 [debug] [Thread-1 (]: Writing injected SQL for node "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.295124 [debug] [Thread-1 (]: Began executing node model.gym_tracker_dbt.Questions_model
+[0m19:31:09.337823 [debug] [Thread-1 (]: Writing runtime sql for node "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.339480 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.340478 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: BEGIN
+[0m19:31:09.340478 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:31:09.388701 [debug] [Thread-1 (]: SQL status: BEGIN in 0.051 seconds
+[0m19:31:09.388701 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.388701 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+
+  create view "gym"."staging"."Questions_model__dbt_tmp"
+    
+    
+  as (
+    SELECT
+    -- raw_form_questions.id AS raw_id,
+    item.value->>'itemId' AS itemId,
+    CASE WHEN item.value->>'title' LIKE '%Exercises%' THEN 'Exercises' ELSE item.value->>'title' END AS TITLE,
+    item.value->'questionItem'->'question'->>'questionId' AS questionId,
+    item.value->'questionItem'->'question'->'choiceQuestion'->>'type' AS choiceQuestionType,
+    option.value->>'key' AS option_key,
+    option.value->>'value' AS option_value
+FROM
+    "gym"."raw"."raw_form_questions",
+    jsonb_array_elements(questions->'items') AS item
+LEFT JOIN
+    jsonb_array_elements(item.value->'questionItem'->'question'->'choiceQuestion'->'options') AS option
+    ON TRUE
+  );
+[0m19:31:09.687482 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.306 seconds
+[0m19:31:09.703077 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.703077 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+alter table "gym"."staging"."Questions_model" rename to "Questions_model__dbt_backup"
+[0m19:31:09.703077 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m19:31:09.703077 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.703077 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+alter table "gym"."staging"."Questions_model__dbt_tmp" rename to "Questions_model"
+[0m19:31:09.703077 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m19:31:09.718698 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: COMMIT
+[0m19:31:09.718698 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.734318 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: COMMIT
+[0m19:31:09.734318 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m19:31:09.734318 [debug] [Thread-1 (]: Applying DROP to: "gym"."staging"."Questions_model__dbt_backup"
+[0m19:31:09.734318 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:31:09.749964 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+drop view if exists "gym"."staging"."Questions_model__dbt_backup" cascade
+[0m19:31:09.765590 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.028 seconds
+[0m19:31:09.781418 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: Close
+[0m19:31:09.784410 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '20f35f76-e770-44c3-8500-03a49be7a853', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B32A38440>]}
+[0m19:31:09.785407 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.Questions_model ....................... [[32mCREATE VIEW[0m in 0.52s]
+[0m19:31:09.786405 [debug] [Thread-1 (]: Finished running node model.gym_tracker_dbt.Questions_model
+[0m19:31:09.787406 [debug] [MainThread]: Using postgres connection "master"
+[0m19:31:09.788400 [debug] [MainThread]: On master: BEGIN
+[0m19:31:09.788400 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:31:09.841826 [debug] [MainThread]: SQL status: BEGIN in 0.053 seconds
+[0m19:31:09.841826 [debug] [MainThread]: On master: COMMIT
+[0m19:31:09.842824 [debug] [MainThread]: Using postgres connection "master"
+[0m19:31:09.842824 [debug] [MainThread]: On master: COMMIT
+[0m19:31:09.843828 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:31:09.843828 [debug] [MainThread]: On master: Close
+[0m19:31:09.844818 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:31:09.844818 [debug] [MainThread]: Connection 'list_gym' was properly closed.
+[0m19:31:09.844818 [debug] [MainThread]: Connection 'list_gym_staging' was properly closed.
+[0m19:31:09.845816 [debug] [MainThread]: Connection 'model.gym_tracker_dbt.Questions_model' was properly closed.
+[0m19:31:09.845816 [info ] [MainThread]: 
+[0m19:31:09.846813 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 4.79 seconds (4.79s).
+[0m19:31:09.847811 [debug] [MainThread]: Command end result
+[0m19:31:09.869509 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:31:09.873175 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:31:09.882600 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\run_results.json
+[0m19:31:09.883596 [info ] [MainThread]: 
+[0m19:31:09.883596 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:31:09.884595 [info ] [MainThread]: 
+[0m19:31:09.884595 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m19:31:09.886615 [debug] [MainThread]: Command `dbt run` succeeded at 19:31:09.886615 after 6.48 seconds
+[0m19:31:09.886615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B34848B30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B36FD6ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B3592AFC0>]}
+[0m19:31:09.886615 [debug] [MainThread]: Flushing usage events
+[0m19:31:11.271009 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:33:16.826129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E94E51DC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E94E51400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E94E50CB0>]}
+
+
+============================== 19:33:16.841748 | 19a00b1a-36aa-4ac6-86d1-8f70abdc48f7 ==============================
+[0m19:33:16.841748 [info ] [MainThread]: Running with dbt=1.9.4
+[0m19:33:16.841748 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\Documents\\Python C drive\\Gym\\Gym Github\\Gym\\gym_tracker_dbt\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --select Questions_filter', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m19:33:17.077933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '19a00b1a-36aa-4ac6-86d1-8f70abdc48f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E9538B980>]}
+[0m19:33:17.153269 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '19a00b1a-36aa-4ac6-86d1-8f70abdc48f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E9538BA10>]}
+[0m19:33:17.153269 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m19:33:17.630789 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m19:33:17.840806 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:33:17.840806 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:33:17.858523 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.gym_tracker_dbt.example.Gym_Final
+[0m19:33:17.892860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '19a00b1a-36aa-4ac6-86d1-8f70abdc48f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E956181A0>]}
+[0m19:33:17.964602 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:33:17.980223 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:33:18.027087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '19a00b1a-36aa-4ac6-86d1-8f70abdc48f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E96900FE0>]}
+[0m19:33:18.027087 [info ] [MainThread]: Found 5 models, 2 sources, 434 macros
+[0m19:33:18.027087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '19a00b1a-36aa-4ac6-86d1-8f70abdc48f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E95329040>]}
+[0m19:33:18.027087 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m19:33:18.027087 [debug] [MainThread]: Command end result
+[0m19:33:18.059919 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:33:18.060942 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:33:18.064853 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\run_results.json
+[0m19:33:18.064853 [debug] [MainThread]: Command `dbt run` succeeded at 19:33:18.064853 after 1.44 seconds
+[0m19:33:18.072579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E94DEC6B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E95293EF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016E947959A0>]}
+[0m19:33:18.072579 [debug] [MainThread]: Flushing usage events
+[0m19:33:18.465546 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:33:41.975551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E552BAF440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E54FEF01D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E54F5F9340>]}
+
+
+============================== 19:33:41.981535 | 271d1c26-8215-41c6-ad24-242a5d62f90c ==============================
+[0m19:33:41.981535 [info ] [MainThread]: Running with dbt=1.9.4
+[0m19:33:41.982532 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Documents\\Python C drive\\Gym\\Gym Github\\Gym\\gym_tracker_dbt\\logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --select Questions_filter', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m19:33:42.224295 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '271d1c26-8215-41c6-ad24-242a5d62f90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E552F0E480>]}
+[0m19:33:42.294805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '271d1c26-8215-41c6-ad24-242a5d62f90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E552EEFA70>]}
+[0m19:33:42.294805 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m19:33:42.770535 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m19:33:42.981677 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m19:33:42.981677 [debug] [MainThread]: Partial parsing: updated file: gym_tracker_dbt://models\example\Staging\Questions_model.sql
+[0m19:33:42.981677 [debug] [MainThread]: Partial parsing: updated file: gym_tracker_dbt://models\example\Staging\Questions_filter.sql
+[0m19:33:43.294290 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.gym_tracker_dbt.example.Gym_Final
+[0m19:33:43.309913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '271d1c26-8215-41c6-ad24-242a5d62f90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5545CFEC0>]}
+[0m19:33:43.386037 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:33:43.386037 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:33:43.436243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '271d1c26-8215-41c6-ad24-242a5d62f90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5545F8E00>]}
+[0m19:33:43.436243 [info ] [MainThread]: Found 5 models, 2 sources, 434 macros
+[0m19:33:43.437241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '271d1c26-8215-41c6-ad24-242a5d62f90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5531EAD20>]}
+[0m19:33:43.439235 [info ] [MainThread]: 
+[0m19:33:43.440232 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:33:43.440232 [info ] [MainThread]: 
+[0m19:33:43.441230 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:33:43.443224 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gym'
+[0m19:33:43.589753 [debug] [ThreadPool]: Using postgres connection "list_gym"
+[0m19:33:43.590751 [debug] [ThreadPool]: On list_gym: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:33:43.590751 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:33:43.649232 [debug] [ThreadPool]: SQL status: SELECT 9 in 0.059 seconds
+[0m19:33:43.649232 [debug] [ThreadPool]: On list_gym: Close
+[0m19:33:43.649232 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gym_staging'
+[0m19:33:43.649232 [debug] [ThreadPool]: Using postgres connection "list_gym_staging"
+[0m19:33:43.649232 [debug] [ThreadPool]: On list_gym_staging: BEGIN
+[0m19:33:43.649232 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:33:43.711717 [debug] [ThreadPool]: SQL status: BEGIN in 0.050 seconds
+[0m19:33:43.711717 [debug] [ThreadPool]: Using postgres connection "list_gym_staging"
+[0m19:33:43.711717 [debug] [ThreadPool]: On list_gym_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym_staging"} */
+select
+      'gym' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'gym' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'gym' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m19:33:43.711717 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.007 seconds
+[0m19:33:43.711717 [debug] [ThreadPool]: On list_gym_staging: ROLLBACK
+[0m19:33:43.711717 [debug] [ThreadPool]: On list_gym_staging: Close
+[0m19:33:43.711717 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_gym_staging, now list_gym_pres)
+[0m19:33:43.727339 [debug] [ThreadPool]: Using postgres connection "list_gym_pres"
+[0m19:33:43.727339 [debug] [ThreadPool]: On list_gym_pres: BEGIN
+[0m19:33:43.727339 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:33:43.774203 [debug] [ThreadPool]: SQL status: BEGIN in 0.049 seconds
+[0m19:33:43.774203 [debug] [ThreadPool]: Using postgres connection "list_gym_pres"
+[0m19:33:43.774203 [debug] [ThreadPool]: On list_gym_pres: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym_pres"} */
+select
+      'gym' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'pres'
+    union all
+    select
+      'gym' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'pres'
+    union all
+    select
+      'gym' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'pres'
+  
+[0m19:33:43.774203 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.007 seconds
+[0m19:33:43.774203 [debug] [ThreadPool]: On list_gym_pres: ROLLBACK
+[0m19:33:43.774203 [debug] [ThreadPool]: On list_gym_pres: Close
+[0m19:33:43.789825 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:43.789825 [debug] [MainThread]: On master: BEGIN
+[0m19:33:43.789825 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:33:43.836689 [debug] [MainThread]: SQL status: BEGIN in 0.051 seconds
+[0m19:33:43.836689 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:43.836689 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:33:43.852311 [debug] [MainThread]: SQL status: SELECT 6 in 0.011 seconds
+[0m19:33:43.852311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '271d1c26-8215-41c6-ad24-242a5d62f90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5545FFAA0>]}
+[0m19:33:43.852311 [debug] [MainThread]: On master: ROLLBACK
+[0m19:33:43.852311 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:43.852311 [debug] [MainThread]: On master: BEGIN
+[0m19:33:43.852311 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m19:33:43.852311 [debug] [MainThread]: On master: COMMIT
+[0m19:33:43.852311 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:43.852311 [debug] [MainThread]: On master: COMMIT
+[0m19:33:43.852311 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:33:43.852311 [debug] [MainThread]: On master: Close
+[0m19:33:43.867932 [debug] [Thread-1 (]: Began running node model.gym_tracker_dbt.Questions_filter
+[0m19:33:43.867932 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.Questions_filter ........................... [RUN]
+[0m19:33:43.867932 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.gym_tracker_dbt.Questions_filter'
+[0m19:33:43.867932 [debug] [Thread-1 (]: Began compiling node model.gym_tracker_dbt.Questions_filter
+[0m19:33:43.867932 [debug] [Thread-1 (]: Writing injected SQL for node "model.gym_tracker_dbt.Questions_filter"
+[0m19:33:43.867932 [debug] [Thread-1 (]: Began executing node model.gym_tracker_dbt.Questions_filter
+[0m19:33:43.919863 [debug] [Thread-1 (]: Writing runtime sql for node "model.gym_tracker_dbt.Questions_filter"
+[0m19:33:43.939118 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_filter"
+[0m19:33:43.939118 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_filter: BEGIN
+[0m19:33:43.940117 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:33:43.990026 [debug] [Thread-1 (]: SQL status: BEGIN in 0.051 seconds
+[0m19:33:43.990026 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_filter"
+[0m19:33:43.990026 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_filter: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_filter"} */
+
+  create view "gym"."staging"."Questions_filter__dbt_tmp"
+    
+    
+  as (
+    SELECT QUESTIONS,INSERT_TIMESTAMP
+FROM (
+SELECT *,ROW_NUMBER() OVER ( ORDER BY INSERT_TIMESTAMP DESC) AS RN
+FROM "gym"."raw"."raw_form_questions"
+)
+WHERE RN = 1
+  );
+[0m19:33:44.012767 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.029 seconds
+[0m19:33:44.028389 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_filter"
+[0m19:33:44.028389 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_filter: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_filter"} */
+alter table "gym"."staging"."Questions_filter__dbt_tmp" rename to "Questions_filter"
+[0m19:33:44.028389 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:33:44.044011 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_filter: COMMIT
+[0m19:33:44.044011 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_filter"
+[0m19:33:44.044011 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_filter: COMMIT
+[0m19:33:44.044011 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:33:44.044011 [debug] [Thread-1 (]: Applying DROP to: "gym"."staging"."Questions_filter__dbt_backup"
+[0m19:33:44.059632 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_filter"
+[0m19:33:44.059632 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_filter: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_filter"} */
+drop view if exists "gym"."staging"."Questions_filter__dbt_backup" cascade
+[0m19:33:44.075352 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.012 seconds
+[0m19:33:44.078344 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_filter: Close
+[0m19:33:44.081336 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '271d1c26-8215-41c6-ad24-242a5d62f90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E54FFF42C0>]}
+[0m19:33:44.082333 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.Questions_filter ...................... [[32mCREATE VIEW[0m in 0.21s]
+[0m19:33:44.083330 [debug] [Thread-1 (]: Finished running node model.gym_tracker_dbt.Questions_filter
+[0m19:33:44.085325 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:44.085325 [debug] [MainThread]: On master: BEGIN
+[0m19:33:44.085325 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:33:44.142327 [debug] [MainThread]: SQL status: BEGIN in 0.056 seconds
+[0m19:33:44.143324 [debug] [MainThread]: On master: COMMIT
+[0m19:33:44.143324 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:44.143324 [debug] [MainThread]: On master: COMMIT
+[0m19:33:44.144320 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:33:44.144320 [debug] [MainThread]: On master: Close
+[0m19:33:44.145317 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:33:44.145317 [debug] [MainThread]: Connection 'list_gym' was properly closed.
+[0m19:33:44.146322 [debug] [MainThread]: Connection 'list_gym_pres' was properly closed.
+[0m19:33:44.146322 [debug] [MainThread]: Connection 'model.gym_tracker_dbt.Questions_filter' was properly closed.
+[0m19:33:44.147313 [info ] [MainThread]: 
+[0m19:33:44.147313 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.71 seconds (0.71s).
+[0m19:33:44.148311 [debug] [MainThread]: Command end result
+[0m19:33:44.171077 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:33:44.175042 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:33:44.175358 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\run_results.json
+[0m19:33:44.175358 [info ] [MainThread]: 
+[0m19:33:44.175358 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:33:44.185984 [info ] [MainThread]: 
+[0m19:33:44.186988 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m19:33:44.188974 [debug] [MainThread]: Command `dbt run` succeeded at 19:33:44.188974 after 2.41 seconds
+[0m19:33:44.189972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5531E9430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5531B46E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E552401730>]}
+[0m19:33:44.189972 [debug] [MainThread]: Flushing usage events
+[0m19:33:44.550881 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:33:58.509621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B213D1DCA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B2149EDB80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B214B050D0>]}
+
+
+============================== 19:33:58.509621 | 6a652513-93bf-4dd3-b2fe-a42cf1123861 ==============================
+[0m19:33:58.509621 [info ] [MainThread]: Running with dbt=1.9.4
+[0m19:33:58.509621 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Documents\\Python C drive\\Gym\\Gym Github\\Gym\\gym_tracker_dbt\\logs', 'profiles_dir': 'C:\\Users\\charl\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --select Questions_model', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m19:33:58.762989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6a652513-93bf-4dd3-b2fe-a42cf1123861', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B214C6E540>]}
+[0m19:33:58.835935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6a652513-93bf-4dd3-b2fe-a42cf1123861', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B214E2B170>]}
+[0m19:33:58.837932 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m19:33:59.294619 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m19:33:59.513113 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:33:59.513113 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:33:59.513113 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.gym_tracker_dbt.example.Gym_Final
+[0m19:33:59.566428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6a652513-93bf-4dd3-b2fe-a42cf1123861', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B214E0EC60>]}
+[0m19:33:59.637987 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:33:59.637987 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:33:59.700473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6a652513-93bf-4dd3-b2fe-a42cf1123861', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B216221310>]}
+[0m19:33:59.700473 [info ] [MainThread]: Found 5 models, 2 sources, 434 macros
+[0m19:33:59.700473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6a652513-93bf-4dd3-b2fe-a42cf1123861', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B214C4F2F0>]}
+[0m19:33:59.700473 [info ] [MainThread]: 
+[0m19:33:59.700473 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:33:59.700473 [info ] [MainThread]: 
+[0m19:33:59.700473 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:33:59.700473 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gym'
+[0m19:33:59.856361 [debug] [ThreadPool]: Using postgres connection "list_gym"
+[0m19:33:59.856361 [debug] [ThreadPool]: On list_gym: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:33:59.856361 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:33:59.918025 [debug] [ThreadPool]: SQL status: SELECT 9 in 0.059 seconds
+[0m19:33:59.918025 [debug] [ThreadPool]: On list_gym: Close
+[0m19:33:59.918025 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gym_pres'
+[0m19:33:59.933647 [debug] [ThreadPool]: Using postgres connection "list_gym_pres"
+[0m19:33:59.933647 [debug] [ThreadPool]: On list_gym_pres: BEGIN
+[0m19:33:59.933647 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:33:59.980511 [debug] [ThreadPool]: SQL status: BEGIN in 0.051 seconds
+[0m19:33:59.980511 [debug] [ThreadPool]: Using postgres connection "list_gym_pres"
+[0m19:33:59.980511 [debug] [ThreadPool]: On list_gym_pres: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym_pres"} */
+select
+      'gym' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'pres'
+    union all
+    select
+      'gym' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'pres'
+    union all
+    select
+      'gym' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'pres'
+  
+[0m19:33:59.998385 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.008 seconds
+[0m19:33:59.999382 [debug] [ThreadPool]: On list_gym_pres: ROLLBACK
+[0m19:34:00.000380 [debug] [ThreadPool]: On list_gym_pres: Close
+[0m19:34:00.001376 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_gym_pres, now list_gym_staging)
+[0m19:34:00.004368 [debug] [ThreadPool]: Using postgres connection "list_gym_staging"
+[0m19:34:00.004368 [debug] [ThreadPool]: On list_gym_staging: BEGIN
+[0m19:34:00.005365 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:34:00.065207 [debug] [ThreadPool]: SQL status: BEGIN in 0.060 seconds
+[0m19:34:00.066205 [debug] [ThreadPool]: Using postgres connection "list_gym_staging"
+[0m19:34:00.066205 [debug] [ThreadPool]: On list_gym_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "list_gym_staging"} */
+select
+      'gym' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'gym' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'gym' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m19:34:00.074183 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.007 seconds
+[0m19:34:00.076177 [debug] [ThreadPool]: On list_gym_staging: ROLLBACK
+[0m19:34:00.076177 [debug] [ThreadPool]: On list_gym_staging: Close
+[0m19:34:00.082162 [debug] [MainThread]: Using postgres connection "master"
+[0m19:34:00.082162 [debug] [MainThread]: On master: BEGIN
+[0m19:34:00.083160 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:34:00.134501 [debug] [MainThread]: SQL status: BEGIN in 0.051 seconds
+[0m19:34:00.134501 [debug] [MainThread]: Using postgres connection "master"
+[0m19:34:00.135498 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:34:00.146552 [debug] [MainThread]: SQL status: SELECT 7 in 0.011 seconds
+[0m19:34:00.148547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6a652513-93bf-4dd3-b2fe-a42cf1123861', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B21629C170>]}
+[0m19:34:00.148547 [debug] [MainThread]: On master: ROLLBACK
+[0m19:34:00.149545 [debug] [MainThread]: Using postgres connection "master"
+[0m19:34:00.149545 [debug] [MainThread]: On master: BEGIN
+[0m19:34:00.150542 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m19:34:00.150542 [debug] [MainThread]: On master: COMMIT
+[0m19:34:00.151539 [debug] [MainThread]: Using postgres connection "master"
+[0m19:34:00.151539 [debug] [MainThread]: On master: COMMIT
+[0m19:34:00.152536 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:34:00.152536 [debug] [MainThread]: On master: Close
+[0m19:34:00.158531 [debug] [Thread-1 (]: Began running node model.gym_tracker_dbt.Questions_model
+[0m19:34:00.158531 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.Questions_model ............................ [RUN]
+[0m19:34:00.159517 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.gym_tracker_dbt.Questions_model'
+[0m19:34:00.160515 [debug] [Thread-1 (]: Began compiling node model.gym_tracker_dbt.Questions_model
+[0m19:34:00.170489 [debug] [Thread-1 (]: Writing injected SQL for node "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.172483 [debug] [Thread-1 (]: Began executing node model.gym_tracker_dbt.Questions_model
+[0m19:34:00.215561 [debug] [Thread-1 (]: Writing runtime sql for node "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.217555 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.217555 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: BEGIN
+[0m19:34:00.218552 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:34:00.256245 [debug] [Thread-1 (]: SQL status: BEGIN in 0.051 seconds
+[0m19:34:00.256245 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.256245 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+
+  create view "gym"."staging"."Questions_model__dbt_tmp"
+    
+    
+  as (
+    SELECT
+    -- raw_form_questions.id AS raw_id,
+    item.value->>'itemId' AS itemId,
+    CASE WHEN item.value->>'title' LIKE '%Exercises%' THEN 'Exercises' ELSE item.value->>'title' END AS TITLE,
+    item.value->'questionItem'->'question'->>'questionId' AS questionId,
+    item.value->'questionItem'->'question'->'choiceQuestion'->>'type' AS choiceQuestionType,
+    option.value->>'key' AS option_key,
+    option.value->>'value' AS option_value
+FROM
+    "gym"."staging"."Questions_filter",
+    jsonb_array_elements(questions->'items') AS item
+LEFT JOIN
+    jsonb_array_elements(item.value->'questionItem'->'question'->'choiceQuestion'->'options') AS option
+    ON TRUE
+  );
+[0m19:34:00.287493 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.017 seconds
+[0m19:34:00.287493 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.287493 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+alter table "gym"."staging"."Questions_model" rename to "Questions_model__dbt_backup"
+[0m19:34:00.287493 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m19:34:00.287493 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.287493 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+alter table "gym"."staging"."Questions_model__dbt_tmp" rename to "Questions_model"
+[0m19:34:00.287493 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:34:00.318894 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: COMMIT
+[0m19:34:00.319892 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.319892 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: COMMIT
+[0m19:34:00.321886 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:34:00.328867 [debug] [Thread-1 (]: Applying DROP to: "gym"."staging"."Questions_model__dbt_backup"
+[0m19:34:00.334851 [debug] [Thread-1 (]: Using postgres connection "model.gym_tracker_dbt.Questions_model"
+[0m19:34:00.334851 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "gym_tracker_dbt", "target_name": "dev", "node_id": "model.gym_tracker_dbt.Questions_model"} */
+drop view if exists "gym"."staging"."Questions_model__dbt_backup" cascade
+[0m19:34:00.340873 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.014 seconds
+[0m19:34:00.340873 [debug] [Thread-1 (]: On model.gym_tracker_dbt.Questions_model: Close
+[0m19:34:00.340873 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6a652513-93bf-4dd3-b2fe-a42cf1123861', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B2141047D0>]}
+[0m19:34:00.356495 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.Questions_model ....................... [[32mCREATE VIEW[0m in 0.18s]
+[0m19:34:00.356495 [debug] [Thread-1 (]: Finished running node model.gym_tracker_dbt.Questions_model
+[0m19:34:00.356495 [debug] [MainThread]: Using postgres connection "master"
+[0m19:34:00.356495 [debug] [MainThread]: On master: BEGIN
+[0m19:34:00.356495 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:34:00.414296 [debug] [MainThread]: SQL status: BEGIN in 0.053 seconds
+[0m19:34:00.414296 [debug] [MainThread]: On master: COMMIT
+[0m19:34:00.415293 [debug] [MainThread]: Using postgres connection "master"
+[0m19:34:00.415293 [debug] [MainThread]: On master: COMMIT
+[0m19:34:00.416733 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:34:00.416774 [debug] [MainThread]: On master: Close
+[0m19:34:00.417771 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:34:00.417771 [debug] [MainThread]: Connection 'list_gym' was properly closed.
+[0m19:34:00.417771 [debug] [MainThread]: Connection 'list_gym_staging' was properly closed.
+[0m19:34:00.418769 [debug] [MainThread]: Connection 'model.gym_tracker_dbt.Questions_model' was properly closed.
+[0m19:34:00.418769 [info ] [MainThread]: 
+[0m19:34:00.419766 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.72 seconds (0.72s).
+[0m19:34:00.421761 [debug] [MainThread]: Command end result
+[0m19:34:00.439565 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\manifest.json
+[0m19:34:00.450921 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\semantic_manifest.json
+[0m19:34:00.451672 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Documents\Python C drive\Gym\Gym Github\Gym\gym_tracker_dbt\target\run_results.json
+[0m19:34:00.451672 [info ] [MainThread]: 
+[0m19:34:00.451672 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:34:00.451672 [info ] [MainThread]: 
+[0m19:34:00.451672 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m19:34:00.451672 [debug] [MainThread]: Command `dbt run` succeeded at 19:34:00.451672 after 2.15 seconds
+[0m19:34:00.451672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B2121756D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B21490C260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B213E13320>]}
+[0m19:34:00.451672 [debug] [MainThread]: Flushing usage events
+[0m19:34:00.810085 [debug] [MainThread]: An error was encountered while trying to flush usage events
