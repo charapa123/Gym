@@ -63,33 +63,6 @@ while True:
 
 
 
-#### This is for when the pipeline is built to update daily
-
-data = []
-
-for item1 in result:
-    a = item1['createTime']
-    data.append(a)
-
-
-
-data = []  # List to store filtered responses
-# target_date = datetime(2024, 12, 31, tzinfo=timezone.utc).date()  # Set target date (UTC)
-target_date = datetime.now(timezone.utc).date() - timedelta(days=1)
-
-# Iterate over the responses
-for item in result:
-    # Parse the createTime field
-    create_time = datetime.fromisoformat(item['createTime'].replace("Z", "+00:00")).date()
-    
-    # Check if the response matches the target date
-    if create_time == target_date:
-        data.append(item)  # Keep the response if it matches the target date
-
-# print(f"Filtered responses for {target_date}:")
-
-now = datetime.utcnow()
-
 conn = psycopg2.connect(
     dbname = DB_NAME,
     user = USERNAME,
@@ -97,17 +70,58 @@ conn = psycopg2.connect(
     host = "localhost",
     port="5432"
 )
+
 cursor = conn.cursor()
 
-# Insert data
+cursor.execute(
+    '''
+set search_path to pres;
+
+SELECT max(date(create_time))
+FROM "GYM_RESPONSE"
+'''
+)
+posgres_result = cursor.fetchone()   # returns a tuple
+max_date = posgres_result[0]         # extract the value
+
+print(max_date)
+
+
+
+data = []  # List to store filtered responses 
+
+# Iterate over the responses
+for item in result['responses']:
+    # Parse the createTime field
+    create_time = datetime.fromisoformat(item['createTime'].replace("Z", "+00:00")).date()
+    
+    # Check if the response matches the target date
+    if create_time > max_date:
+        data.append(item)  # Keep the response if the data doesn't already exist in database
+
+now = datetime.utcnow()
+
+#Insert data
 insert_query = '''
 SET search_path TO RAW;
 INSERT INTO RAW_FORM_ANSWERS (ANSWERS,INSERT_TIMESTAMP)
 VALUES (%s,%s);
 '''
-for item in data:
-    cursor.execute(insert_query, (json.dumps(item), now))
-conn.commit()
 
+for item in data:
+    # cur.execute(insert_query, (json.dumps(item), now))
+    cursor.execute(insert_query, (json.dumps(item), now))
+
+# cursor.execute("TRUNCATE TABLE raw.raw_form_questions;")
+
+insert_question = '''
+SET search_path TO RAW;
+INSERT INTO RAW_FORM_QUESTIONS (QUESTIONS,INSERT_TIMESTAMP)
+VALUES (%s,%s);
+'''
+cursor.execute(insert_question, (json.dumps(result_question), now))
+
+conn.commit()
 cursor.close()
 conn.close()
+
