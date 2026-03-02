@@ -1,4 +1,4 @@
-gym_tracker:
+gym_tracker_dbt:
   target: dev
   outputs:
     dev:
