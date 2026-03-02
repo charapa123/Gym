@@ -1,4 +1,4 @@
-gym_project:
+gym_tracker:
   target: dev
   outputs:
     dev:
@@ -8,4 +8,5 @@ gym_project:
       password: "{{ env_var('DBT_PASSWORD') }}"
       dbname: "{{ env_var('DBT_DBNAME') }}"
       schema: "{{ env_var('DBT_SCHEMA') }}"
+      port: 5432
       threads: 1
