@@ -50,6 +50,7 @@ jobs:
           DBT_SCHEMA: ${{ secrets.SCHEMA }}
           DBT_DBNAME: ${{ secrets.DB_NAME }}
         run: |
+          cd gym_tracker_dbt
           dbt debug
           dbt run
 
