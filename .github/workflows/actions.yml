@@ -44,7 +44,7 @@ jobs:
       - name: Run dbt models
         shell: powershell
         env:
-          DBT_PROFILES_DIR: ./gym_tracker_dbt
+          DBT_PROFILES_DIR: .
           DBT_USER: ${{ secrets.USERNAME }}
           DBT_PASSWORD: ${{ secrets.PASSWORD }}
           DBT_SCHEMA: ${{ secrets.SCHEMA }}
