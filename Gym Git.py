@@ -91,7 +91,7 @@ print(max_date)
 data = []  # List to store filtered responses 
 
 # Iterate over the responses
-for item in result['responses']:
+for item in result:
     # Parse the createTime field
     create_time = datetime.fromisoformat(item['createTime'].replace("Z", "+00:00")).date()
     
