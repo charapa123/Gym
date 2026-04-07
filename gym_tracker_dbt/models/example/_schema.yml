@@ -6,19 +6,24 @@ sources:
     schema: raw  # schema where raw tables live
     tables:
       - name: raw_form_answers
+        columns:
+          - name: response_id
+            tests:
+              - unique
+              - not_null
         config:
           freshness:
             warn_after:
               count: 12
               period: day
             error_after: 
-              count: 30
+              count: 100
               period: day
           loaded_at_field: insert_timestamp
       - name: raw_form_questions
 
 models:
-  - name: GYM_RESPONSE # ✅ this must match your alias above
+  - name: GYM_UPDATE 
     description: "Pivoted answers with question titles as columns"
 
 

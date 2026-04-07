@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: Answers_model
+    columns:
+      - name: response_id
+        tests:
+          - unique
+          - not_null
+
+  - name: Questions_model
+    columns:
+      - name: questionId
+        tests:
+          - unique
+          - not_null
