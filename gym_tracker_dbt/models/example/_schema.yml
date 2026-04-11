@@ -2,10 +2,12 @@ version: 2
 
 sources:
   - name: raw
+    description: data from postgres data base
     database: gym 
     schema: raw  # schema where raw tables live
     tables:
       - name: raw_form_answers
+        description: this contains the raw json response of answers from google forms and an insert timestsamp
         columns:
           - name: answers
             tests:
@@ -21,6 +23,7 @@ sources:
               period: day
           loaded_at_field: insert_timestamp
       - name: raw_form_questions
+        description: this contains the raw json response of questions from google forms and an insert timestsamp
 
 
 
