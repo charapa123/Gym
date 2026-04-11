@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: Answers_model
+    columns:
+      - name: response_id
+        description: parses out the raw json object, response id is the eventual granularity but comes in pivoted.
+        tests:
+          - not_null
+
+  - name: Questions_model
+    description: parses out the raw json object, questionid is the eventual granularity but comes in pivoted.
+    columns:
+      - name: itemid
+        tests:
+          - not_null
+
+  - name: Questions_filter
+    description: filters to latest set of questions
+
+
+  - name: GYM_UPDATE
+    description: Pivoted answers with question titles as columns, so now granularity is responseid
+    columns:
+      - name: response_id
+        tests:
+          - unique
+          - not_null

@@ -1,4 +1,4 @@
-name: Daily Gym Data Pipeline
+name: Gym Data Pipeline
 
 on:
   workflow_dispatch:  # Manual trigger only
@@ -37,5 +37,21 @@ jobs:
           DB_NAME: ${{ secrets.DB_NAME }}
         run: |
           python "Gym Git.py" "Workout Form Responses"
+
+                # -----------------------------
+      # STEP 2: Run dbt
+      # -----------------------------
+      - name: Run dbt models
+        shell: powershell
+        env:
+          DBT_PROFILES_DIR: .
+          DBT_USER: ${{ secrets.USERNAME }}
+          DBT_PASSWORD: ${{ secrets.PASSWORD }}
+          DBT_SCHEMA: ${{ secrets.SCHEMA }}
+          DBT_DBNAME: ${{ secrets.DB_NAME }}
+        run: |
+          cd gym_tracker_dbt
+          dbt debug
+          dbt build
 
 

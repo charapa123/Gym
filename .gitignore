@@ -1,3 +1,5 @@
 .venv
 test.py
 Gym_to_google_sheets_copy.py
+.user.yml
+profiles.yml

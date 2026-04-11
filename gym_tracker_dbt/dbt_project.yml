@@ -33,6 +33,13 @@ models:
   gym_tracker_dbt:
     example:
       +materialized: view
+      Staging:
+        +schema: 'staging'
+        +materialized: view
+      Gym_Final:
+        +schema: 'pres'
+        +materialized: table
+      
 
 
 

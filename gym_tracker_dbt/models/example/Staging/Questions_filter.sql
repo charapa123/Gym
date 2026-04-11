@@ -1,0 +1,10 @@
+
+
+SELECT QUESTIONS,INSERT_TIMESTAMP
+FROM (
+SELECT *,ROW_NUMBER() OVER ( ORDER BY INSERT_TIMESTAMP DESC) AS RN
+FROM {{ source('raw', 'raw_form_questions') }}
+)
+WHERE RN = 1
+
+    
