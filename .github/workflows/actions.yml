@@ -52,6 +52,6 @@ jobs:
         run: |
           cd gym_tracker_dbt
           dbt debug
-          dbt run
+          dbt build
 
 
