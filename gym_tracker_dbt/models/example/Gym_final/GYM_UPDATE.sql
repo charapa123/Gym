@@ -24,3 +24,4 @@ GROUP BY
     A.response_id,
     A.create_time,
     A.respondent_email
+ORDER BY A.create_time desc
