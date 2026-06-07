@@ -139,7 +139,6 @@ This provides a simple incremental loading pattern.
 
 Benefits:
 
-- Reduced API processing
 - Faster pipeline runs
 - Lower risk of duplicate records
 - Clear restart point for future runs
@@ -196,6 +195,7 @@ The final grain is `response_id`, where each row represents one exercise set.
 ### Why Google Sheets for reporting?
 
 Tableau Public cannot connect directly to PostgreSQL databases. Google Sheets provides a lightweight intermediary layer that Tableau Public can consume.
+Google sheets is in the cloud and can be updated on a scheduled pipeline
 
 ### Why separate answers and questions?
 
