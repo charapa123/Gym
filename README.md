@@ -1,7 +1,5 @@
 # Gym Tracker Data Pipeline
 
-![Architecture Diagram](docs/Images/Architecture_diagram.png)
-
 ## Overview
 
 This project explores two approaches to delivering analytics from Google Forms workout data.
@@ -26,6 +24,8 @@ The project was built to practise and demonstrate:
 ## Architecture
 
 The solution has two delivery paths built from the same Google Forms source.
+
+![Architecture Diagram](docs/Images/Architecture_diagram.png)
 
 ### Reporting pipeline
 
