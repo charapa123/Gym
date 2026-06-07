@@ -149,44 +149,35 @@ Benefits:
 
 The Google Form was intentionally designed so exercise-selection questions contain the word `Exercises` in the question title.
 
-The dbt model `Questions_model.sql` standardises those question titles:
+This creates a metadata-driven design that avoids hardcoded exercise lists.
 
-```sql
-CASE
-    WHEN item.value->>'title' LIKE '%Exercises%'
-    THEN 'Exercises'
-    ELSE item.value->>'title'
-END AS title
-```
+Exercise definitions are stored within Google Forms question metadata and extracted dynamically during transformation.
 
-This allows the model to treat exercise-selection questions consistently while still allowing the form to evolve.
+New exercises can therefore be added through the Google Form interface without requiring updates to:
 
-Exercise options are extracted from the Google Forms question metadata using PostgreSQL JSON processing:
+* Python scripts
+* PostgreSQL objects
+* dbt models
 
-```sql
-jsonb_array_elements(
-    item.value->'questionItem'->'question'->'choiceQuestion'->'options'
-) AS option
-```
-
-This means new exercises can be added through the Google Form interface without hardcoding them in Python, PostgreSQL or dbt.
+This improves maintainability and allows the form structure to evolve over time.
 
 ---
 
 ## Final analytical output
 
-The final dbt presentation model is `GYM_UPDATE`.
+The analytics engineering pipeline produces a curated dataset through dbt.
 
-It pivots answer rows into an exercise-set level dataset using conditional aggregation:
+The final presentation model is `GYM_UPDATE`, which represents workout performance at the exercise-set level.
 
-```sql
-MAX(A.answer) FILTER (WHERE Q.title = 'Which body part did you work out?') AS "Body_Part",
-MAX(A.answer) FILTER (WHERE Q.title = 'How heavy was the weight?') AS "Weight",
-MAX(A.answer) FILTER (WHERE Q.title = 'How many reps?') AS "Reps",
-MAX(A.answer) FILTER (WHERE Q.title = 'Exercises') AS "Exercises"
-```
+Each row represents one completed exercise set and contains:
 
-The final grain is `response_id`, where each row represents one exercise set.
+* Response metadata
+* Body part
+* Exercise
+* Weight
+* Repetitions
+
+Further implementation details are documented in `docs/dbt.md`.
 
 ---
 
