@@ -17,11 +17,11 @@ The core design decision is the grain of the data.
 
 Each Google Form submission represents **one completed exercise set**.
 
-![Data Grain](..images/Data_grain.png)
+![Data Grain](Images/Data_grain.png)
 
 
 
-[Watch Google Form workflow demo](images/Google_form.mp4)
+[Watch Google Form workflow demo](Images/Google_form.mp4)
 
 The form captures:
 
@@ -52,13 +52,13 @@ This decision informed the Google Form structure, Python extraction logic, Postg
 
 ## Overall architecture
 
-![Architecture Diagram](images/Architecture_diagram.png)
+![Architecture Diagram](Images/Architecture_diagram.png)
 
 ---
 
 ## Reporting pipeline
 
-![Reporting Pipeline](images/Reporting_pipeline.png)
+![Reporting Pipeline](Images/Reporting_pipeline.png)
 
 The reporting pipeline is designed for dashboard delivery.
 
@@ -74,7 +74,7 @@ Google Sheets is used as the reporting layer because Tableau Public cannot conne
 
 ## Analytics engineering pipeline
 
-![Analytics Pipeline](images/Analytical_pipeline.png)
+![Analytics Pipeline](Images/Analytical_pipeline.png)
 
 The analytics engineering pipeline is designed for data modelling and quality validation.
 

@@ -46,7 +46,7 @@ Gym to google sheets.py
 
 ### Workflow screenshot
 
-![Image](Images/Reporting_workflow.png)
+![Reporting workflow github actions](Images/Reporting_workflow.png)
 
 ### Main steps
 
@@ -90,7 +90,7 @@ dbt build
 
 ### Workflow screenshot
 
-![Image](Images/Analytical_workflow.png)
+![Analytical workflow github actions](Images/Analytical_workflow.png)
 
 ### Main steps
 
