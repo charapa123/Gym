@@ -21,7 +21,7 @@ Each Google Form submission represents **one completed exercise set**.
 
 
 
-[Watch Google Form workflow demo](Images/Google_form.mp4)
+[Watch Google Form workflow demo](Images/Google_form.gif)
 
 The form captures:
 
