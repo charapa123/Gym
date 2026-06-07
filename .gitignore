@@ -3,3 +3,6 @@ test.py
 Gym_to_google_sheets_copy.py
 .user.yml
 profiles.yml
+**/target/
+**/logs/
+**/.dbt_packages/
