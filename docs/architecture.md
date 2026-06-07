@@ -79,7 +79,7 @@ Google Sheets is used as the reporting layer because Tableau Public cannot conne
 The analytics engineering pipeline is designed for data modelling and quality validation.
 
 ```text
-Google Forms → Python ETL → PostgreSQL → dbt → Analytics Dataset
+Google Forms → Python ELT → PostgreSQL → dbt → Analytics Dataset
 ```
 
 The script `Gym Git.py` extracts responses and question metadata from the Google Forms API and loads them into PostgreSQL raw tables. dbt then transforms the raw JSON into a final presentation model.

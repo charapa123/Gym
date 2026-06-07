@@ -33,7 +33,7 @@ Google Forms → Python ETL → Google Sheets → Tableau Public
 
 ### Analytics engineering pipeline
 
-Google Forms → Python ETL → PostgreSQL → dbt → Analytics dataset
+Google Forms → Python ELT → PostgreSQL → dbt → Analytics dataset
 
 Detailed architecture notes are available in [`docs/architecture.md`](docs/architecture.md).
 
