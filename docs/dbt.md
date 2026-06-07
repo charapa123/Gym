@@ -40,7 +40,7 @@ gym_tracker_dbt/
 
 ## Analytics pipeline detail
 
-![Analytics Pipeline Detail](images/Analytical_pipeline.png)
+![Analytics Pipeline Detail](images\Analytical_pipeline.png)
 
 The dbt workflow transforms raw Google Forms JSON into an analytics-ready table.
 
@@ -211,7 +211,7 @@ dbt build
 
 ## Lineage
 
-![Lineage](images/Dbt_lineage.png)
+![Lineage](images\Dbt_lineage.png)
 
 The dbt lineage graph should show the flow from raw sources through staging models into `GYM_UPDATE`.
 
