@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-pipeline:
-    runs-on: ubuntu-latest  # Your Windows machine running the GitHub runner
+    runs-on: ubuntu-latest  # GitHub-hosted runner
 
     steps:
       - name: Checkout repo
