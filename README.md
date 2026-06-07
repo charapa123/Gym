@@ -106,18 +106,31 @@ Gym/
 ├── .github/workflows/
 │   ├── Google_sheet_action.yml
 │   └── actions.yml
+│
 ├── gym_tracker_dbt/
 │   ├── models/example/Staging/
 │   ├── models/example/Gym_final/
 │   ├── dbt_project.yml
 │   └── profiles.yml
+│
 ├── docs/
+│   ├── Images/
+│   │   ├── Architecture_diagram.png
+│   │   ├── Data_grain.png
+│   │   ├── Reporting_pipeline.png
+│   │   ├── Reporting_workflow.png
+│   │   ├── Analytical_pipeline.png
+│   │   ├── Analytical_workflow.png
+│   │   ├── Dbt_lineage.png
+│   │   └── Google_form.mp4
+│   │
 │   ├── architecture.md
 │   ├── authentication.md
 │   ├── dbt.md
 │   ├── orchestration.md
 │   ├── development-process.md
 │   └── references.md
+│
 ├── Gym Git.py
 ├── Gym to google sheets.py
 ├── requirements.txt
@@ -140,8 +153,3 @@ Gym/
 ## Future enhancements
 
 - Build the Tableau Public dashboard once more workout history has been collected
-- Add additional workout KPIs such as volume, personal bests and progression trends
-- Move PostgreSQL from a local environment to a cloud-hosted database
-- Containerise the project with Docker
-- Expand dbt tests and documentation
-- Add alerting for failed workflow runs
