@@ -17,7 +17,7 @@ The core design decision is the grain of the data.
 
 Each Google Form submission represents **one completed exercise set**.
 
-![Data Grain](images/Data_grain.png)
+![Data Grain](..images/Data_grain.png)
 
 
 
